@@ -96,8 +96,8 @@ services.factory('Scene3DApi', function ($http, $log, $rootScope, $routeParams, 
             var objTarget = new THREE.Object3D();
 
             objTarget.position.x = 0;
-            objTarget.position.y = 1200;
-            objTarget.position.z = -1450;
+            objTarget.position.y = 800;
+            objTarget.position.z = -800;
 
 
 

@@ -556,8 +556,8 @@ h1 {
 }
 /* line 41, ../sass/sale.scss */
 #sales .isOut {
-  width: 300% !important;
-  left: -100%;
+  width: 200% !important;
+  left: -50%;
 }
 
 /* line 9, ../sass/screen.scss */
