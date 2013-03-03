@@ -1,11 +1,7 @@
-
-#products {
-
-
+#sales {
   width: 100%;
 
-
-  .item-wrap{
+  .item-wrap {
 
     @include transition-property(all);
     @include transition-duration(1s);
@@ -42,12 +38,9 @@
     }
   }
 
-  .isOut{
-     width: 300% !important;
+  .isOut {
+    width: 300% !important;
     left: -100%;
 
   }
-
-
 }
-

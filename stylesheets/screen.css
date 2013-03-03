@@ -115,6 +115,81 @@ h1 {
   box-shadow: 0 8px 6px -6px black;
 }
 
+/* line 110, ../sass/base.scss */
+.thumb-wrap a {
+  color: #ffffff;
+}
+/* line 118, ../sass/base.scss */
+.thumb-wrap:hover .thumb .thumbnail-women {
+  border-color: #d96666;
+}
+/* line 122, ../sass/base.scss */
+.thumb-wrap:hover .thumb .thumbnail-men {
+  border-color: #d98032;
+}
+/* line 126, ../sass/base.scss */
+.thumb-wrap:hover .thumb .thumbnail-kids {
+  border-color: #f2a950;
+}
+/* line 130, ../sass/base.scss */
+.thumb-wrap:hover .thumb .thumbnail-home {
+  border-color: #736c48;
+}
+/* line 134, ../sass/base.scss */
+.thumb-wrap:hover .thumb legend {
+  display: block;
+  bottom: -1px;
+}
+/* line 142, ../sass/base.scss */
+.thumb-wrap .thumb {
+  margin: .5px;
+  overflow: hidden;
+  position: relative;
+}
+/* line 148, ../sass/base.scss */
+.thumb-wrap .thumb legend {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -ms-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  padding: 4px;
+  margin: 0;
+  bottom: -55px;
+  position: absolute;
+}
+/* line 160, ../sass/base.scss */
+.thumb-wrap .thumb legend h5 {
+  position: absolute;
+  top: 5px;
+  text-align: center;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  margin-left: 10px;
+  padding-right: 20px;
+}
+/* line 175, ../sass/base.scss */
+.thumb-wrap .thumb legend .gradient {
+  opacity: 1;
+  width: 100% !important;
+  height: 50px !important;
+  background: none;
+}
+
 /* line 2, ../sass/products.scss */
 #products {
   width: 100%;
@@ -151,12 +226,13 @@ h1 {
 #products .item-wrap .items li {
   display: inline-block;
   vertical-align: text-bottom;
+  margin: 20px;
 }
-/* line 30, ../sass/products.scss */
+/* line 31, ../sass/products.scss */
 #products .item-wrap .items a {
   color: #ffffff;
 }
-/* line 33, ../sass/products.scss */
+/* line 34, ../sass/products.scss */
 #products .item-wrap .items a .item {
   margin: 10px;
   width: 250px;
@@ -164,18 +240,54 @@ h1 {
   background-color: #d96666;
   padding: 10px;
 }
-/* line 44, ../sass/products.scss */
+/* line 45, ../sass/products.scss */
 #products .isOut {
   width: 300% !important;
   left: -100%;
 }
 
-/* line 3, ../sass/product.scss */
+/* line 1, ../sass/product.scss */
 #product {
-  width: 750px;
-  height: 400px;
-  background-color: #d96666;
-  padding: 20px;
+  padding-bottom: 20px;
+}
+/* line 3, ../sass/product.scss */
+#product .item3d {
+  width: 980px;
+  height: 650px;
+}
+/* line 8, ../sass/product.scss */
+#product .element {
+  position: absolute;
+  width: 980px;
+  height: 650px;
+  cursor: default;
+  opacity: 1;
+}
+/* line 18, ../sass/product.scss */
+#product article {
+  padding-top: 0;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+/* line 24, ../sass/product.scss */
+#product .img-wrap {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+/* line 30, ../sass/product.scss */
+#product img {
+  width: 420px !important;
+  height: 560px !important;
+}
+/* line 35, ../sass/product.scss */
+#product hr {
+  border-top: 1px solid rgba(238, 238, 238, 0.32);
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+/* line 40, ../sass/product.scss */
+#product .btn {
+  margin-top: 20px;
 }
 
 /* line 1, ../sass/nav.scss */
@@ -388,7 +500,63 @@ h1 {
   opacity: 1;
 }
 
-/* line 7, ../sass/screen.scss */
+/* line 1, ../sass/sale.scss */
+#sales {
+  width: 100%;
+}
+/* line 4, ../sass/sale.scss */
+#sales .item-wrap {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -ms-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -ms-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  position: relative;
+  white-space: nowrap;
+  width: 100%;
+  margin: 0;
+  overflow: scroll;
+}
+/* line 16, ../sass/sale.scss */
+#sales .item-wrap .items {
+  list-style: none;
+  margin: 0;
+}
+/* line 21, ../sass/sale.scss */
+#sales .item-wrap .items li {
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin: 20px;
+}
+/* line 27, ../sass/sale.scss */
+#sales .item-wrap .items a {
+  color: #ffffff;
+}
+/* line 30, ../sass/sale.scss */
+#sales .item-wrap .items a .item {
+  margin: 10px;
+  width: 250px;
+  height: 384px;
+  background-color: #d96666;
+  padding: 10px;
+}
+/* line 41, ../sass/sale.scss */
+#sales .isOut {
+  width: 300% !important;
+  left: -100%;
+}
+
+/* line 9, ../sass/screen.scss */
 .main-content {
   color: #eeeeee;
   width: auto;
@@ -398,13 +566,13 @@ h1 {
   left: 0;
   right: 0;
 }
-/* line 16, ../sass/screen.scss */
+/* line 18, ../sass/screen.scss */
 .main-content .viewer-outer-wrap {
   position: relative;
   width: 100%;
   height: 100%;
 }
-/* line 22, ../sass/screen.scss */
+/* line 24, ../sass/screen.scss */
 .main-content #viewer-wrap {
   margin: auto;
   display: block;
@@ -412,7 +580,7 @@ h1 {
   width: 100%;
   height: 100%;
 }
-/* line 29, ../sass/screen.scss */
+/* line 31, ../sass/screen.scss */
 .main-content #viewer-wrap .viewer {
   display: block;
   position: relative;

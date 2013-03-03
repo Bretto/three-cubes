@@ -19,8 +19,9 @@
         <div id="viewer-wrap">
             <div scene-3d fov="68" near="1" far="5000" pos-x="0" pos-y="0" pos-z="700" rot-x="0" rot-y="0" rot-z="0" id="scene-3d">
                 <section camera-3d id="camera-3d">
-                    <div ui-view="products"></div>
-                    <div ui-view="product" parent-state-name="products"></div>
+                    <div ui-view="sale"></div>
+                    <div ui-view="product" parent-state-name="sale"></div>
+                    <div ui-view="item" parent-state-name="sale"></div>
                 </section>
             </div>
         </div>

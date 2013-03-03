@@ -114,3 +114,78 @@ h1 {
   -moz-box-shadow: 0 8px 6px -6px black;
   box-shadow: 0 8px 6px -6px black;
 }
+
+/* line 110, ../sass/base.scss */
+.thumb-wrap a {
+  color: #ffffff;
+}
+/* line 118, ../sass/base.scss */
+.thumb-wrap:hover .thumb .thumbnail-women {
+  border-color: #d96666;
+}
+/* line 122, ../sass/base.scss */
+.thumb-wrap:hover .thumb .thumbnail-men {
+  border-color: #d98032;
+}
+/* line 126, ../sass/base.scss */
+.thumb-wrap:hover .thumb .thumbnail-kids {
+  border-color: #f2a950;
+}
+/* line 130, ../sass/base.scss */
+.thumb-wrap:hover .thumb .thumbnail-home {
+  border-color: #736c48;
+}
+/* line 134, ../sass/base.scss */
+.thumb-wrap:hover .thumb legend {
+  display: block;
+  bottom: -1px;
+}
+/* line 142, ../sass/base.scss */
+.thumb-wrap .thumb {
+  margin: .5px;
+  overflow: hidden;
+  position: relative;
+}
+/* line 148, ../sass/base.scss */
+.thumb-wrap .thumb legend {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -ms-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -ms-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  padding: 4px;
+  margin: 0;
+  bottom: -55px;
+  position: absolute;
+}
+/* line 160, ../sass/base.scss */
+.thumb-wrap .thumb legend h5 {
+  position: absolute;
+  top: 5px;
+  text-align: center;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  margin-left: 10px;
+  padding-right: 20px;
+}
+/* line 175, ../sass/base.scss */
+.thumb-wrap .thumb legend .gradient {
+  opacity: 1;
+  width: 100% !important;
+  height: 50px !important;
+  background: none;
+}

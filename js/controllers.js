@@ -3,48 +3,162 @@
 
 var controllers = angular.module('App.controllers', []);
 
-controllers.controller('MainCtrl', function ($scope, $rootScope, $timeout, $log, Scene3DApi, MainModel){
+//controllers.controller('MainCtrl', function ($scope, $rootScope, $timeout, $log, Scene3DApi, MainModel){
+//    $log.info('MainCtrl');
+//
+//    $scope.$on('$stateChangeSuccess', function(e, to, from){
+//        $log.info('$stateChangeSuccess', 'PRODUCT');
+//
+//        if(to.url === '/products'){
+//            MainModel.activeView = 'PRODUCTS';
+//        }else if(to.url === '/:id'){
+//            MainModel.activeView = 'PRODUCT';
+//        }
+//    });
+//});
+//
+//controllers.controller('MainNavCtrl', function ($scope, $timeout, MainModel, $routeParams, $log){
+//    $log.info('MainNavCtrl');
+//
+//});
+//
+//controllers.controller('MainContentCtrl', function ($scope, $rootScope, $timeout, $compile, $log, MainModel){
+//    $log.info('MainContentCtrl');
+//
+//});
+
+//controllers.controller('ProductsCtrl', function ($scope, MainModel, $log, $http, $routeParams, $timeout, Scene3DApi, OBJ3D, promiseData){
+//    $log.info('ProductsCtrl');
+//
+//    $scope.MainModel = MainModel;
+//    MainModel.root = 'welcome';
+//
+//    $scope.data = promiseData;
+//
+//    MainModel.breadcrumbs(MainModel.root);
+//
+//    $scope.isOut = function(){
+//        return (MainModel.activeView === 'PRODUCTS')? false:true;
+//    }
+//
+//    $scope.$on('$stateChangeSuccess', function(e, to, from){
+//        $log.info('$stateChangeSuccess', 'PRODUCTS');
+//        if(MainModel.activeView === 'PRODUCTS'){
+//            $scope.transform(Scene3DApi.getProductsLayoutIn(OBJ3D.PRODUCTS,0), 1000);
+//        }
+//    });
+//
+//
+//    $scope.$on('addObj3D', function(e,obj3D){
+//        //$log.info('addObj3D', 'HOME')
+//        e.stopPropagation();
+//        OBJ3D.PRODUCTS.push(obj3D);
+//    });
+//
+//    $scope.$on('render3dComplete', function(e,obj3D){
+//        //$log.info('render3dComplete', 'HOME');
+//        e.stopPropagation();
+//        $scope.setInitPosition(Scene3DApi.getFlyOutLayout(OBJ3D.PRODUCTS,$scope.getCamera()));
+//
+//        if(MainModel.activeView === "PRODUCT"){
+//            $scope.transform(Scene3DApi.getProductsLayoutOut(OBJ3D.PRODUCTS,0), 1000);
+//        }else{
+//            $scope.transform(Scene3DApi.getProductsLayoutIn(OBJ3D.PRODUCTS,0), 1000);
+//        }
+//
+//
+//    })
+//
+//
+//});
+
+//controllers.controller('ProductCtrl', function ($scope, MainModel, $log, $http, $routeParams, $timeout, Scene3DApi, OBJ3D, promiseData){
+//    $log.info('ProductCtrl');
+//
+//    $scope.MainModel = MainModel;
+//    MainModel.root = 'welcome';
+//
+//    $scope.data = promiseData;
+//
+//    MainModel.breadcrumbs(MainModel.root);
+//
+//    $scope.isIn = function(){
+//        return (MainModel.activeView === 'PRODUCT')? false:true;
+//    }
+//
+//    $scope.$on('$stateChangeSuccess', function(e, to, from){
+//        $log.info('$stateChangeSuccess', 'PRODUCT');
+//        if(MainModel.activeView === 'PRODUCT'){
+//
+//            $scope.transform(Scene3DApi.getProductsLayoutOut(OBJ3D.PRODUCTS, 0), 1000);
+//        }
+//    });
+//
+//
+//    $scope.$on('addObj3D', function(e,obj3D){
+//        //$log.info('addObj3D', 'HOME')
+//        e.stopPropagation();
+//        OBJ3D.PRODUCT.push(obj3D);
+//    });
+//
+//    $scope.$on('render3dComplete', function(e,obj3D){
+//        //$log.info('render3dComplete', 'HOME');
+//        e.stopPropagation();
+//        $scope.setInitPosition(Scene3DApi.getFlyOutLayout(OBJ3D.PRODUCT,$scope.getCamera()));
+//        $scope.transform(Scene3DApi.getProductsLayoutIn(OBJ3D.PRODUCT,0), 1000);
+//    })
+//
+//
+//});
+
+controllers.controller('MainCtrl', function ($scope, $rootScope, $timeout, $log, Scene3DApi){
     $log.info('MainCtrl');
+});
+
+controllers.controller('MainContentCtrl', function ($scope, $rootScope, $timeout, $compile, $log, MainModel){
+    $log.info('MainContentCtrl');
 
     $scope.$on('$stateChangeSuccess', function(e, to, from){
         $log.info('$stateChangeSuccess', 'PRODUCT');
 
-        if(to.url === '/products'){
-            MainModel.activeView = 'PRODUCTS';
-        }else if(to.url === '/:id'){
+        if(to.url === '/sale/:type'){
+            $log.info('Sale:ACTIVE');
+            MainModel.activeView = 'SALE';
+        }else if(to.url === '/product/:uri'){
             MainModel.activeView = 'PRODUCT';
+        }else if(to.url === '/item/:id'){
+            MainModel.activeView = 'ITEM';
+        }else if(to.url === '/'){
+            MainModel.activeView = 'HOME';
         }
     });
 });
 
 controllers.controller('MainNavCtrl', function ($scope, $timeout, MainModel, $routeParams, $log){
     $log.info('MainNavCtrl');
+    $scope.MainModel = MainModel;
+    MainModel.root = $routeParams.type;
+    MainModel.productURI = $routeParams.uri;
+    MainModel.productID = $routeParams.id;
+
 
 });
 
-controllers.controller('MainContentCtrl', function ($scope, $rootScope, $timeout, $compile, $log, MainModel){
-    $log.info('MainContentCtrl');
+controllers.controller('WelcomeCtrl', function ($scope, MainModel, $log, $http, $routeParams, GILT, $timeout, Scene3DApi){
+    $log.info('HomeCtrl');
 
-});
-
-controllers.controller('ProductsCtrl', function ($scope, MainModel, $log, $http, $routeParams, $timeout, Scene3DApi, OBJ3D, promiseData){
-    $log.info('ProductsCtrl');
+    var homeObj3Ds = [];
 
     $scope.MainModel = MainModel;
     MainModel.root = 'welcome';
 
-    $scope.data = promiseData;
-
     MainModel.breadcrumbs(MainModel.root);
 
-    $scope.isOut = function(){
-        return (MainModel.activeView === 'PRODUCTS')? false:true;
-    }
-
     $scope.$on('$stateChangeSuccess', function(e, to, from){
-        $log.info('$stateChangeSuccess', 'PRODUCTS');
-        if(MainModel.activeView === 'PRODUCTS'){
-            $scope.transform(Scene3DApi.getProductsLayoutIn(OBJ3D.PRODUCTS,0), 1500);
+        $log.info('$stateChangeSuccess', 'HOME');
+        if(MainModel.activeView === 'HOME'){
+
+            $scope.transform(Scene3DApi.setDepthPosition(homeObj3Ds, 0), 1500);
         }
     });
 
@@ -52,62 +166,191 @@ controllers.controller('ProductsCtrl', function ($scope, MainModel, $log, $http,
     $scope.$on('addObj3D', function(e,obj3D){
         //$log.info('addObj3D', 'HOME')
         e.stopPropagation();
-        OBJ3D.PRODUCTS.push(obj3D);
+        homeObj3Ds.push(obj3D);
     });
 
     $scope.$on('render3dComplete', function(e,obj3D){
         //$log.info('render3dComplete', 'HOME');
         e.stopPropagation();
-        $scope.setInitPosition(Scene3DApi.getFlyOutLayout(OBJ3D.PRODUCTS,$scope.getCamera()));
+        $scope.setInitPosition(Scene3DApi.getFlyOutLayout(homeObj3Ds,$scope.getCamera()));
+        $scope.transform(Scene3DApi.getProductLayout(homeObj3Ds,0), 1500);
+    })
 
-        if(MainModel.activeView === "PRODUCT"){
-            $scope.transform(Scene3DApi.getProductsLayoutOut(OBJ3D.PRODUCTS,0), 1500);
-        }else{
-            $scope.transform(Scene3DApi.getProductsLayoutIn(OBJ3D.PRODUCTS,0), 1500);
+
+});
+
+controllers.controller('SalesCtrl', function ($scope, MainModel, $log, promiseData, Scene3DApi, $stateParams, $state, $timeout, OBJ3D, $location){
+    $log.info('SalesCtrl');
+
+    $scope.MainModel = MainModel;
+    MainModel.root = $stateParams.type;
+
+    $scope.data = promiseData.data;
+    $scope.item = promiseData.item;
+
+    MainModel.breadcrumbs(MainModel.root + ' sales');
+
+    $scope.$on('$stateChangeSuccess', function(e, to, from){
+        $log.info('$stateChangeSuccess', 'PRODUCT');
+        if(MainModel.activeView === 'SALE'){
+
+            $scope.transform(Scene3DApi.getSalesLayout_IN(OBJ3D.SALE), 1500);
         }
+    });
 
+    $scope.isOut = function(){
+        return (MainModel.activeView === 'SALE')? false:true;
+    }
+
+    $scope.$on('Sale:onEnter', function(){
+        $log.info('Sale:onEnter');
+    });
+
+    $scope.$on('Sale:onExit', function(){
+        $log.info('Sale:onExit');
+        OBJ3D.SALE = [];
+    });
+
+    $scope.$on('addObj3D', function(e,obj3D){
+        //$log.info('addObj3D', 'SALES')
+        e.stopPropagation();
+        OBJ3D.SALE.push(obj3D);
+    });
+
+    $scope.$on('render3dComplete', function(e,obj3D){
+        $log.info('render3dComplete', 'SALES');
+        e.stopPropagation();
+        $scope.setInitPosition(Scene3DApi.getFlyOutLayout(OBJ3D.SALE));
+
+        if(MainModel.activeView === "SALE"){
+            $scope.transform(Scene3DApi.getSalesLayout_IN(OBJ3D.SALE), 1500);
+        }else if(MainModel.activeView === "PRODUCT"){
+            $scope.transform(Scene3DApi.getSalesLayout_OUT1(OBJ3D.SALE), 1500);
+        }else if(MainModel.activeView === "ITEM"){
+            $scope.transform(Scene3DApi.getSalesLayout_OUT2(OBJ3D.SALE), 1500);
+        }
 
     })
 
 
 });
 
-controllers.controller('ProductCtrl', function ($scope, MainModel, $log, $http, $routeParams, $timeout, Scene3DApi, OBJ3D, promiseData){
-    $log.info('ProductCtrl');
+controllers.controller('ProductsCtrl', function ($scope, $log, $routeParams, GILT, $http, MainModel, promiseData, Scene3DApi, $stateParams, OBJ3D){
+    $log.info('ProductsCtrl');
+
 
     $scope.MainModel = MainModel;
-    MainModel.root = 'welcome';
+    MainModel.root = $stateParams.type;
+    MainModel.productURI = $stateParams.uri;
 
-    $scope.data = promiseData;
+    $scope.data = promiseData.data;
+    $scope.products = promiseData.products;
+    $scope.isSoldOut = (promiseData.products) ? false : true;
 
-    MainModel.breadcrumbs(MainModel.root);
-
-    $scope.isIn = function(){
-        return (MainModel.activeView === 'PRODUCT')? false:true;
-    }
+    MainModel.breadcrumbs(MainModel.root + ' sales', promiseData.data.name );
 
     $scope.$on('$stateChangeSuccess', function(e, to, from){
-        $log.info('$stateChangeSuccess', 'PRODUCT');
-        if(MainModel.activeView === 'PRODUCT'){
+        $log.info('$stateChangeSuccess', 'SALE');
 
-            $scope.transform(Scene3DApi.getProductsLayoutOut(OBJ3D.PRODUCTS, 0), 1500);
+        if(to.url === '/product/:uri'){
+            $log.info('Product:ACTIVE');
+            $scope.transform(Scene3DApi.getSalesLayout_OUT1(OBJ3D.SALE), 1500);
+            $scope.transform(Scene3DApi.getProductsLayout_IN(OBJ3D.PRODUCT), 1500);
         }
     });
 
+    $scope.isFar = function(){
+        return (MainModel.activeView === 'PRODUCT')? false:true;
+    }
+
+    $scope.$on('Product:onEnter', function(){
+        $log.info('Product:onEnter');
+    });
+
+    $scope.$on('Product:onExit', function(e,state,stateParams){
+        $log.info('Product:onExit');
+        MainModel.productCrumb = '';
+        OBJ3D.PRODUCT = [];
+    });
 
     $scope.$on('addObj3D', function(e,obj3D){
-        //$log.info('addObj3D', 'HOME')
+        //$log.info('addObj3D', 'PRODUCT')
         e.stopPropagation();
         OBJ3D.PRODUCT.push(obj3D);
     });
 
     $scope.$on('render3dComplete', function(e,obj3D){
-        //$log.info('render3dComplete', 'HOME');
+        //$log.info('render3dComplete', 'PRODUCT')
         e.stopPropagation();
-        $scope.setInitPosition(Scene3DApi.getFlyOutLayout(OBJ3D.PRODUCT,$scope.getCamera()));
-        $scope.transform(Scene3DApi.getProductsLayoutIn(OBJ3D.PRODUCT,0), 1500);
+        $scope.setInitPosition(Scene3DApi.getFlyOutLayout(OBJ3D.PRODUCT));
+
+        var z;
+        if(MainModel.activeView === "PRODUCT"){
+            $scope.transform(Scene3DApi.getProductsLayout_IN(OBJ3D.PRODUCT), 1500);
+        }else if(MainModel.activeView === "ITEM"){
+            $scope.transform(Scene3DApi.getProductsLayout_OUT(OBJ3D.PRODUCT), 1500);
+        }
+
+
     })
 
+});
+
+controllers.controller('ProductCtrl', function ($scope, $log, $routeParams, GILT, $http, MainModel, promiseData, $timeout, Scene3DApi, $stateParams, OBJ3D){
+    $log.info('ProductCtrl');
+
+
+
+    $scope.MainModel = MainModel;
+    MainModel.root = $stateParams.type;
+    MainModel.productURI = $stateParams.uri;
+    MainModel.productID = $stateParams.id;
+
+    $scope.data = promiseData.data;
+    $scope.item = promiseData.item;
+
+    MainModel.breadcrumbs(MainModel.root + ' sales', promiseData.data.name, promiseData.item.name );
+
+
+
+    $scope.$on('$stateChangeSuccess', function(e, to, from){
+        $log.info('$stateChangeSuccess', 'PRODUCT');
+
+        if(to.url === '/item/:id'){
+            $log.info('Product:ACTIVE');
+            $scope.transform(Scene3DApi.getSalesLayout_OUT2(OBJ3D.SALE), 1500);
+            $scope.transform(Scene3DApi.getProductsLayout_OUT(OBJ3D.PRODUCT), 1500);
+        }
+    });
+
+    $scope.$on('$routeChangeStart', function(){
+        $scope.layoutFn = Scene3DApi.getFlyOutLayout;
+    })
+
+    $scope.$on('addObj3D', function(e,obj3D){
+        //$log.info('addObj3D', 'ITEM')
+        e.stopPropagation();
+        OBJ3D.ITEM.push(obj3D);
+    });
+
+    $scope.$on('render3dComplete', function(e,obj3D){
+        //$log.info('render3dComplete', 'ITEM')
+        e.stopPropagation();
+        $scope.setInitPosition(Scene3DApi.getFlyOutLayout(OBJ3D.ITEM));
+        $scope.transform(Scene3DApi.getProductLayout(OBJ3D.ITEM,0), 1500);
+    })
+
+    $scope.$on('Item:onEnter', function(){
+        $log.info('Item:onEnter');
+    });
+
+    $scope.$on('Item:onExit', function(){
+        $log.info('Item:onExit');
+        MainModel.itemCrumb = '';
+        OBJ3D.ITEM = [];
+//        $scope.transform(Scene3DApi.setDepthPosition(OBJ3D.SALE, -500), 1500);
+//        $scope.transform(Scene3DApi.setDepthPosition(OBJ3D.PRODUCT, 0), 1500);
+    });
 
 });
 

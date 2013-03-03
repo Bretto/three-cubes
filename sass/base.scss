@@ -104,3 +104,82 @@ h1{
   -moz-box-shadow: 0 8px 6px -6px black;
   box-shadow: 0 8px 6px -6px black;
 }
+
+.thumb-wrap {
+
+  a{
+    color: #ffffff;
+  }
+
+  &:hover {
+
+    .thumb {
+
+      .thumbnail-women {
+        border-color: $c1;
+      }
+
+      .thumbnail-men {
+        border-color: $c2;
+      }
+
+      .thumbnail-kids {
+        border-color: $c3;
+      }
+
+      .thumbnail-home {
+        border-color: $c4;
+      }
+
+      legend {
+        display: block;
+        bottom: -1px;
+      }
+    }
+
+  }
+
+  .thumb {
+
+    margin: .5px;
+    overflow: hidden;
+    position: relative;
+
+    legend {
+
+      @include transition-property(all);
+      @include transition-duration(.2s);
+      @include transition-timing-function(ease-out);
+
+      padding: 4px;
+
+      margin: 0;
+      bottom: -55px;
+      position: absolute;
+
+      h5 {
+        position: absolute;
+        top: 5px;
+        text-align: center;
+        text-shadow: 0 0 3px rgba(0, 0, 0, .75);
+        color: #ffffff;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        overflow: hidden;
+        margin-left: 10px;
+        padding-right: 20px;
+
+      }
+
+      .gradient {
+        opacity: 1;
+        width: 100% !important;
+        height: 50px !important;
+        background: none;
+      }
+
+    }
+
+  }
+}
