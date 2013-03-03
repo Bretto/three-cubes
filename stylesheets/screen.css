@@ -147,6 +147,10 @@ h1 {
   position: relative;
 }
 /* line 148, ../sass/base.scss */
+.thumb-wrap .thumb .thumbnail {
+  border: none !important;
+}
+/* line 152, ../sass/base.scss */
 .thumb-wrap .thumb legend {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -168,7 +172,7 @@ h1 {
   bottom: -55px;
   position: absolute;
 }
-/* line 160, ../sass/base.scss */
+/* line 164, ../sass/base.scss */
 .thumb-wrap .thumb legend h5 {
   position: absolute;
   top: 5px;
@@ -182,7 +186,7 @@ h1 {
   margin-left: 10px;
   padding-right: 20px;
 }
-/* line 175, ../sass/base.scss */
+/* line 179, ../sass/base.scss */
 .thumb-wrap .thumb legend .gradient {
   opacity: 1;
   width: 100% !important;
@@ -242,8 +246,8 @@ h1 {
 }
 /* line 45, ../sass/products.scss */
 #products .isOut {
-  width: 300% !important;
-  left: -100%;
+  width: 200% !important;
+  left: -50%;
 }
 
 /* line 1, ../sass/product.scss */

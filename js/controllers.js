@@ -50,7 +50,7 @@ controllers.controller('WelcomeCtrl', function ($scope, MainModel, $log, $http, 
         $log.info('$stateChangeSuccess', 'HOME');
         if(MainModel.activeView === 'HOME'){
 
-            $scope.transform(Scene3DApi.setDepthPosition(homeObj3Ds, 0), 1500);
+            $scope.transform(Scene3DApi.setDepthPosition(homeObj3Ds, 0), 500);
         }
     });
 
@@ -65,7 +65,7 @@ controllers.controller('WelcomeCtrl', function ($scope, MainModel, $log, $http, 
         //$log.info('render3dComplete', 'HOME');
         e.stopPropagation();
         $scope.setInitPosition(Scene3DApi.getFlyOutLayout(homeObj3Ds,$scope.getCamera()));
-        $scope.transform(Scene3DApi.getProductLayout(homeObj3Ds,0), 1500);
+        $scope.transform(Scene3DApi.getProductLayout(homeObj3Ds,0), 500);
     })
 
 
@@ -86,7 +86,7 @@ controllers.controller('SalesCtrl', function ($scope, MainModel, $log, promiseDa
         $log.info('$stateChangeSuccess', 'PRODUCT');
         if(MainModel.activeView === 'SALE'){
 
-            $scope.transform(Scene3DApi.getSalesLayout_IN(OBJ3D.SALE), 1500);
+            $scope.transform(Scene3DApi.getSalesLayout_IN(OBJ3D.SALE), 500);
         }
     });
 
@@ -115,11 +115,11 @@ controllers.controller('SalesCtrl', function ($scope, MainModel, $log, promiseDa
         $scope.setInitPosition(Scene3DApi.getFlyOutLayout(OBJ3D.SALE));
 
         if(MainModel.activeView === "SALE"){
-            $scope.transform(Scene3DApi.getSalesLayout_IN(OBJ3D.SALE), 1500);
+            $scope.transform(Scene3DApi.getSalesLayout_IN(OBJ3D.SALE), 500);
         }else if(MainModel.activeView === "PRODUCT"){
-            $scope.transform(Scene3DApi.getSalesLayout_OUT1(OBJ3D.SALE), 1500);
+            $scope.transform(Scene3DApi.getSalesLayout_OUT1(OBJ3D.SALE), 500);
         }else if(MainModel.activeView === "ITEM"){
-            $scope.transform(Scene3DApi.getSalesLayout_OUT2(OBJ3D.SALE), 1500);
+            $scope.transform(Scene3DApi.getSalesLayout_OUT2(OBJ3D.SALE), 500);
         }
 
     })
@@ -146,8 +146,8 @@ controllers.controller('ProductsCtrl', function ($scope, $log, $routeParams, GIL
 
         if(to.url === '/product/:uri'){
             $log.info('Product:ACTIVE');
-            $scope.transform(Scene3DApi.getSalesLayout_OUT1(OBJ3D.SALE), 1500);
-            $scope.transform(Scene3DApi.getProductsLayout_IN(OBJ3D.PRODUCT), 1500);
+            $scope.transform(Scene3DApi.getSalesLayout_OUT1(OBJ3D.SALE), 500);
+            $scope.transform(Scene3DApi.getProductsLayout_IN(OBJ3D.PRODUCT), 500);
         }
     });
 
@@ -178,9 +178,9 @@ controllers.controller('ProductsCtrl', function ($scope, $log, $routeParams, GIL
 
         var z;
         if(MainModel.activeView === "PRODUCT"){
-            $scope.transform(Scene3DApi.getProductsLayout_IN(OBJ3D.PRODUCT), 1500);
+            $scope.transform(Scene3DApi.getProductsLayout_IN(OBJ3D.PRODUCT), 500);
         }else if(MainModel.activeView === "ITEM"){
-            $scope.transform(Scene3DApi.getProductsLayout_OUT(OBJ3D.PRODUCT), 1500);
+            $scope.transform(Scene3DApi.getProductsLayout_OUT(OBJ3D.PRODUCT), 500);
         }
 
 
@@ -210,8 +210,8 @@ controllers.controller('ProductCtrl', function ($scope, $log, $routeParams, GILT
 
         if(to.url === '/item/:id'){
             $log.info('Product:ACTIVE');
-            $scope.transform(Scene3DApi.getSalesLayout_OUT2(OBJ3D.SALE), 1500);
-            $scope.transform(Scene3DApi.getProductsLayout_OUT(OBJ3D.PRODUCT), 1500);
+            $scope.transform(Scene3DApi.getSalesLayout_OUT2(OBJ3D.SALE), 500);
+            $scope.transform(Scene3DApi.getProductsLayout_OUT(OBJ3D.PRODUCT), 500);
         }
     });
 
@@ -229,7 +229,7 @@ controllers.controller('ProductCtrl', function ($scope, $log, $routeParams, GILT
         //$log.info('render3dComplete', 'ITEM')
         e.stopPropagation();
         $scope.setInitPosition(Scene3DApi.getFlyOutLayout(OBJ3D.ITEM));
-        $scope.transform(Scene3DApi.getProductLayout(OBJ3D.ITEM,0), 1500);
+        $scope.transform(Scene3DApi.getProductLayout(OBJ3D.ITEM,0), 500);
     })
 
     $scope.$on('Item:onEnter', function(){
@@ -240,8 +240,8 @@ controllers.controller('ProductCtrl', function ($scope, $log, $routeParams, GILT
         $log.info('Item:onExit');
         MainModel.itemCrumb = '';
         OBJ3D.ITEM = [];
-//        $scope.transform(Scene3DApi.setDepthPosition(OBJ3D.SALE, -500), 1500);
-//        $scope.transform(Scene3DApi.setDepthPosition(OBJ3D.PRODUCT, 0), 1500);
+//        $scope.transform(Scene3DApi.setDepthPosition(OBJ3D.SALE, -500), 1000);
+//        $scope.transform(Scene3DApi.setDepthPosition(OBJ3D.PRODUCT, 0), 1000);
     });
 
 });

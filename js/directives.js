@@ -125,12 +125,12 @@ directives.directive('scene3d', function ($log, $timeout, $rootScope) {
 
         if(renderer && scene && camera)
         {
-//            friction = .02;
-//
-//            camera.position.x -= ( mouseX/3 + camera.position.x ) * friction, 10;
-//            camera.position.y -= ( - mouseY/3 + camera.position.y ) * friction, 10;
-//
-//            camera.lookAt( scene.position );
+            friction = .2;
+
+            camera.position.x -= ( mouseX/20 + camera.position.x ) * friction, 10;
+            camera.position.y -= ( - mouseY/20 + camera.position.y ) * friction, 10;
+
+            camera.lookAt( scene.position );
 
             renderer.render(scene, camera);
         }

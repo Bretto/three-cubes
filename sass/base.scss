@@ -145,6 +145,10 @@ h1{
     overflow: hidden;
     position: relative;
 
+    .thumbnail{
+      border: none !important;
+    }
+
     legend {
 
       @include transition-property(all);

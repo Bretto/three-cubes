@@ -11,7 +11,7 @@ angular.module('App', ['App.filters', 'App.services', 'App.directives', 'App.con
             .state('home', {
                 url:'/',
                 views:{
-                    'home':{
+                    'sale':{
                         templateUrl:'partial/welcome.html',
                         controller:'WelcomeCtrl'
                     }

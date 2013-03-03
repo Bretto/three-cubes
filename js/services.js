@@ -97,7 +97,7 @@ services.factory('Scene3DApi', function ($http, $log, $rootScope, $routeParams, 
 
             objTarget.position.x = 0;
             objTarget.position.y = 1200;
-            objTarget.position.z = -1500;
+            objTarget.position.z = -1450;
 
 
 
@@ -222,9 +222,9 @@ services.factory('Scene3DApi', function ($http, $log, $rootScope, $routeParams, 
             objTarget.position.x = 0;
             objTarget.position.y = 0;
             objTarget.position.z = -5000;
-            objTarget.rotation.x = (Math.random()*360 + 180) * (Math.PI/180);
-            objTarget.rotation.y = (Math.random()*360 + 180) * (Math.PI/180);
-            objTarget.rotation.z = (Math.random()*360 + 180) * (Math.PI/180);
+            objTarget.rotation.x = (Math.random()*180 + 90) * (Math.PI/180);
+            objTarget.rotation.y = (Math.random()*180 - 90) * (Math.PI/180);
+            objTarget.rotation.z = (Math.random()*180 + 90) * (Math.PI/180);
 
             layout[objId] = {obj:obj, objTarget:objTarget};
         }
