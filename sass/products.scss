@@ -1,0 +1,51 @@
+
+#products {
+
+
+  width: 100%;
+
+
+  .item-wrap{
+
+    @include transition-property(all);
+    @include transition-duration(1.5s);
+    @include transition-timing-function(ease-out);
+
+    position: relative;
+    white-space: nowrap;
+    width: 100%;
+    margin: 0;
+    overflow: scroll;
+
+    .items {
+      list-style: none;
+
+      margin: 0;
+
+      li {
+        display: inline-block;
+      }
+
+      a {
+        color: #ffffff;
+
+        .item {
+          margin: 10px;
+          width: 300px;
+          height: 384px;
+          background-color: $c1;
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+  .isOut{
+     width: 200% !important;
+    left: -50%;
+
+  }
+
+
+}
+
