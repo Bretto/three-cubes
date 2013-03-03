@@ -126,11 +126,11 @@ h1 {
   -ms-transition-property: all;
   -o-transition-property: all;
   transition-property: all;
-  -webkit-transition-duration: 1.5s;
-  -moz-transition-duration: 1.5s;
-  -ms-transition-duration: 1.5s;
-  -o-transition-duration: 1.5s;
-  transition-duration: 1.5s;
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -ms-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
   -webkit-transition-timing-function: ease-out;
   -moz-transition-timing-function: ease-out;
   -ms-transition-timing-function: ease-out;
@@ -150,23 +150,24 @@ h1 {
 /* line 25, ../sass/products.scss */
 #products .item-wrap .items li {
   display: inline-block;
+  vertical-align: text-bottom;
 }
-/* line 29, ../sass/products.scss */
+/* line 30, ../sass/products.scss */
 #products .item-wrap .items a {
   color: #ffffff;
 }
-/* line 32, ../sass/products.scss */
+/* line 33, ../sass/products.scss */
 #products .item-wrap .items a .item {
   margin: 10px;
-  width: 300px;
+  width: 250px;
   height: 384px;
   background-color: #d96666;
   padding: 10px;
 }
-/* line 43, ../sass/products.scss */
+/* line 44, ../sass/products.scss */
 #products .isOut {
-  width: 200% !important;
-  left: -50%;
+  width: 300% !important;
+  left: -100%;
 }
 
 /* line 3, ../sass/product.scss */
