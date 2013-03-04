@@ -55,6 +55,33 @@ services.factory('MainModel', function ($http, $log, $rootScope, $routeParams, $
 services.factory('Scene3DApi', function ($http, $log, $rootScope, $routeParams, $location) {
 
 
+    function getHomeLayout(showObjects){
+
+        var layout = [];
+
+
+        for (var i = 0; i < showObjects.length; i++) {
+
+            var object = showObjects[ i ];
+
+            var objId = 'comp'+i;
+            var obj = showObjects[i];
+            var objTarget = new THREE.Object3D();
+
+            objTarget.position.x = 0;
+            objTarget.position.y = 100;
+            objTarget.position.z = 200;
+
+
+
+            layout[objId] = {obj:obj, objTarget:objTarget};
+        }
+
+
+
+        return layout;
+    }
+
     function getSalesLayout_IN(showObjects){
 
         var layout = [];
@@ -243,6 +270,7 @@ services.factory('Scene3DApi', function ($http, $log, $rootScope, $routeParams, 
         getProductsLayout_IN:getProductsLayout_IN,
         getProductsLayout_OUT:getProductsLayout_OUT,
         getProductLayout:getProductLayout,
+        getHomeLayout:getHomeLayout,
         getFlyOutLayout:getFlyOutLayout
     };
 

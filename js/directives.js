@@ -223,6 +223,28 @@ directives.directive('scene3d', function ($log, $timeout, $rootScope) {
     }
 });
 
+directives.directive('loader', function ($log, $rootScope) {
+
+
+    return {
+        replace:false,
+        restrict:'A',
+        link:function (scope, elem, attr, ctrl) {
+
+            $rootScope.$on("$stateChangeSuccess",function(){
+                scope.isVisible = false;
+            })
+
+            $rootScope.$on("$stateChangeStart",function(){
+                scope.isVisible = true;
+            })
+
+
+
+        }
+    }
+});
+
 
 
 

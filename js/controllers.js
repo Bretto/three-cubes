@@ -50,7 +50,7 @@ controllers.controller('WelcomeCtrl', function ($scope, MainModel, $log, $http, 
         $log.info('$stateChangeSuccess', 'HOME');
         if(MainModel.activeView === 'HOME'){
 
-            $scope.transform(Scene3DApi.setDepthPosition(homeObj3Ds, 0), 500);
+            $scope.transform(Scene3DApi.getHomeLayout(homeObj3Ds), 500);
         }
     });
 
@@ -65,7 +65,7 @@ controllers.controller('WelcomeCtrl', function ($scope, MainModel, $log, $http, 
         //$log.info('render3dComplete', 'HOME');
         e.stopPropagation();
         $scope.setInitPosition(Scene3DApi.getFlyOutLayout(homeObj3Ds,$scope.getCamera()));
-        $scope.transform(Scene3DApi.getProductLayout(homeObj3Ds,0), 500);
+        $scope.transform(Scene3DApi.getHomeLayout(homeObj3Ds), 500);
     })
 
 

@@ -36,3 +36,17 @@
 }
 
 
+#home{
+
+  h2{
+    font-weight: 200;
+  }
+
+  a{
+    color: #ffffff;
+
+    &:hover{
+      color: $c1;
+    }
+  }
+}
