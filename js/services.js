@@ -70,7 +70,7 @@ services.factory('Scene3DApi', function ($http, $log, $rootScope, $routeParams, 
 
             objTarget.position.x = 0;
             objTarget.position.y = 0;
-            objTarget.position.z = 0;
+            objTarget.position.z = 300;
 
 
 

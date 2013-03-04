@@ -25,19 +25,28 @@
       li {
         display: inline-block;
         vertical-align: text-bottom;
-        margin: 20px;
+        margin: 40px;
       }
 
       a {
         color: #ffffff;
 
-        .item {
-          margin: 10px;
-          width: 250px;
-          height: 384px;
-          background-color: $c1;
-          padding: 10px;
+        .thumb{
+
+          @include transition-property(all);
+          @include transition-duration(.3s);
+          @include transition-timing-function(ease-out);
+
+          &:hover{
+            //opacity: .5;
+            //@include translateZ(200px);
+            -webkit-transform: scale(1.2,1.2);
+            z-index: 1;
+
+          }
+
         }
+
       }
     }
   }

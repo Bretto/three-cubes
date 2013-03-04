@@ -1,13 +1,11 @@
 /*
 Syntax error: Undefined mixin 'transition-property'.
-        on line 6 of /Users/separ8/Sites/three-cubes/sass/sale.scss, in `transition-property'
-        from line 6 of /Users/separ8/Sites/three-cubes/sass/sale.scss
-
-1: /Users/separ8/Sites/three-cubes/sass/sale.scss
+        on line 7 of /Users/separ8/Sites/three-cubes/sass/sale.scss, in `transition-property'
+        from line 7 of /Users/separ8/Sites/three-cubes/sass/sale.scss
 
 Backtrace:
-/Users/separ8/Sites/three-cubes/sass/sale.scss:6:in `transition-property'
-/Users/separ8/Sites/three-cubes/sass/sale.scss:6
+/Users/separ8/Sites/three-cubes/sass/sale.scss:7:in `transition-property'
+/Users/separ8/Sites/three-cubes/sass/sale.scss:7
 /Library/Ruby/Gems/1.8/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/perform.rb:249:in `visit_mixin'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `send'
 /Library/Ruby/Gems/1.8/gems/sass-3.2.1/lib/sass/../sass/tree/visitors/base.rb:37:in `visit'
@@ -92,4 +90,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'transition-property'.\A         on line 6 of /Users/separ8/Sites/three-cubes/sass/sale.scss, in `transition-property'\A         from line 6 of /Users/separ8/Sites/three-cubes/sass/sale.scss\A \A 1: /Users/separ8/Sites/three-cubes/sass/sale.scss"; }
+  content: "Syntax error: Undefined mixin 'transition-property'.\A         on line 7 of /Users/separ8/Sites/three-cubes/sass/sale.scss, in `transition-property'\A         from line 7 of /Users/separ8/Sites/three-cubes/sass/sale.scss"; }
