@@ -104,11 +104,10 @@ h1{
 .sold-out{
   color: #ff0000;
   font-size: 52px;
-  -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) scale3d(1, -1, 1);
-  transform: translate3d(-50%, -50%, 0px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) scale3d(1, -1, 1);
+  margin: auto;
+  width: 320px;
   text-align: center;
   background-color: white;
-  display: inline-block;
   padding: 20px;
   -webkit-box-shadow: 0 8px 6px -6px black;
   -moz-box-shadow: 0 8px 6px -6px black;

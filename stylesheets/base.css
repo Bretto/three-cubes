@@ -119,53 +119,52 @@ h1 {
 .sold-out {
   color: #ff0000;
   font-size: 52px;
-  -webkit-transform: translate3d(-50%, -50%, 0px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) scale3d(1, -1, 1);
-  transform: translate3d(-50%, -50%, 0px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1) scale3d(1, -1, 1);
+  margin: auto;
+  width: 320px;
   text-align: center;
   background-color: white;
-  display: inline-block;
   padding: 20px;
   -webkit-box-shadow: 0 8px 6px -6px black;
   -moz-box-shadow: 0 8px 6px -6px black;
   box-shadow: 0 8px 6px -6px black;
 }
 
-/* line 120, ../sass/base.scss */
+/* line 119, ../sass/base.scss */
 .thumb-wrap a {
   color: #ffffff;
 }
-/* line 128, ../sass/base.scss */
+/* line 127, ../sass/base.scss */
 .thumb-wrap:hover .thumb .thumbnail-women {
   border-color: #d96666;
 }
-/* line 132, ../sass/base.scss */
+/* line 131, ../sass/base.scss */
 .thumb-wrap:hover .thumb .thumbnail-men {
   border-color: #d98032;
 }
-/* line 136, ../sass/base.scss */
+/* line 135, ../sass/base.scss */
 .thumb-wrap:hover .thumb .thumbnail-kids {
   border-color: #f2a950;
 }
-/* line 140, ../sass/base.scss */
+/* line 139, ../sass/base.scss */
 .thumb-wrap:hover .thumb .thumbnail-home {
   border-color: #736c48;
 }
-/* line 144, ../sass/base.scss */
+/* line 143, ../sass/base.scss */
 .thumb-wrap:hover .thumb legend {
   display: block;
   bottom: -1px;
 }
-/* line 152, ../sass/base.scss */
+/* line 151, ../sass/base.scss */
 .thumb-wrap .thumb {
   margin: .5px;
   overflow: hidden;
   position: relative;
 }
-/* line 158, ../sass/base.scss */
+/* line 157, ../sass/base.scss */
 .thumb-wrap .thumb .thumbnail {
   border: none !important;
 }
-/* line 162, ../sass/base.scss */
+/* line 161, ../sass/base.scss */
 .thumb-wrap .thumb legend {
   -webkit-transition-property: all;
   -moz-transition-property: all;
@@ -187,7 +186,7 @@ h1 {
   bottom: -55px;
   position: absolute;
 }
-/* line 174, ../sass/base.scss */
+/* line 173, ../sass/base.scss */
 .thumb-wrap .thumb legend h5 {
   position: absolute;
   top: 5px;
@@ -201,7 +200,7 @@ h1 {
   margin-left: 10px;
   padding-right: 20px;
 }
-/* line 189, ../sass/base.scss */
+/* line 188, ../sass/base.scss */
 .thumb-wrap .thumb legend .gradient {
   opacity: 1;
   width: 100% !important;
